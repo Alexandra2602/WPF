@@ -83,7 +83,6 @@ namespace WPF
             action = ActionState.Edit;
             BindingOperations.ClearBinding(firstNameTextBox, TextBox.TextProperty);
             BindingOperations.ClearBinding(lastNameTextBox, TextBox.TextProperty);
-
             SetValidationBinding();
         }
         private void btnDelete_Click(object sender, RoutedEventArgs e)
@@ -332,7 +331,7 @@ namespace WPF
 
         private void BindDataGrid()
         {
-            var queryReservation = from res in ctx.Reservations join cust in ctx.Customers on res.CustomerId equals cust.CustomerId join room in ctx.Rooms on res.CustomerId equals room.RoomId select new { res.ReservationId, res.RoomId, res.CustomerId, cust.FirstName, cust.LastName, room.Type, room.Style };
+            var queryReservation = from res in ctx.Reservations join cust in ctx.Customers on res.CustomerId equals cust.CustomerId join room in ctx.Rooms on res.RoomId equals room.RoomId select new { res.ReservationId, res.RoomId, res.CustomerId, cust.FirstName, cust.LastName, room.Type, room.Style };
             customerReservationsVSource.Source = queryReservation.ToList();                      
         }
 

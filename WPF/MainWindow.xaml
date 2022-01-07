@@ -99,9 +99,10 @@
                 <Grid Background="#FFE5E5E5" DataContext="{StaticResource roomViewSource}">
                     <DataGrid x:Name="roomDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="59,30,40,207" RowDetailsVisibilityMode="VisibleWhenSelected">
                         <DataGrid.Columns>
-                            <DataGridTextColumn x:Name="roomIdColumn" Binding="{Binding RoomId}" Header="Room Id" Width="SizeToHeader"/>
-                            <DataGridTextColumn x:Name="styleColumn" Binding="{Binding Style}" Header="Style" Width="SizeToHeader"/>
+                            <DataGridTextColumn x:Name="roomIdColumn" Binding="{Binding RoomId}" Header="Room Id" Width="SizeToHeader" />
                             <DataGridTextColumn x:Name="typeColumn" Binding="{Binding Type}" Header="Type" Width="SizeToHeader"/>
+                            <DataGridTextColumn x:Name="styleColumn" Binding="{Binding Style}" Header="Style" Width="SizeToHeader"/>
+                            
                         </DataGrid.Columns>
                     </DataGrid>
                     <Grid x:Name="grid2" HorizontalAlignment="Left" Margin="180,250,0,0" VerticalAlignment="Top">
